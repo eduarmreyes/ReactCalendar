@@ -4,7 +4,7 @@ var AppointmentsList = React.createClass({
 			<div>
 				{ this.props.appointments.map(function(appointment) {
 					return(
-	       		<Appointment appointment={ appointment } />
+	       		<Appointment key={ appointment.id } appointment={ appointment } />
 	       	);
 				})}
 			</div>
