@@ -23,9 +23,9 @@ class Appointments extends React.Component {
 				appointment: appointment
 			}
 		)
-		.done(function(data) {
+		.done( (data) => {
 			this.addNewAppointment(data);
-		}.bind(this));
+		});
 	}
 
 	addNewAppointment (appointment) {
@@ -33,7 +33,7 @@ class Appointments extends React.Component {
 			$push: [appointment]
 		});
 		this.setState({
-			appointments: appointments.sort(function(a,b) {
+			appointments: appointments.sort( (a,b) => {
 				return new Date(a.appt_time) - new Date(b.appt_time);
 			})
 		});
@@ -45,8 +45,8 @@ class Appointments extends React.Component {
 				<AppointmentForm
 					title={ this.state.title }
 					appt_time={ this.state.appt_time }
-					onUserInput={ this.handleUserInput.bind(this) }
-					onFormSubmit={ this.handleFormSubmit.bind(this) }
+					onUserInput={ (o) => this.handleUserInput(o) }
+					onFormSubmit={ () => this.handleFormSubmit() }
 				/>
 				<AppointmentsList appointments={ this.state.appointments } />
 			</div>
