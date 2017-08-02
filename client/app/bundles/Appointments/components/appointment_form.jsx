@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Label from './label';
 import Datetime from 'react-datetime';
 
-export default class AppointmentForm extends React.Component {
+export default class AppointmentForm extends Component {
 	handleChange (e) {
 		const name = e.target.name;
 		const obj = {};
